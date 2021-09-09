@@ -30,7 +30,7 @@ void LSM6DSL_configPeriodicReadings (void){
     data = 0x80; //Enable FIFO threshold level use
     I2C_writeRegisters(I2C_ADDRESS_HIGH,FIFO_CTRL4,&data,1); 
     
-    data = 0b01010001; //Enable FIFO ODR 6.66 KsHz and Continuous
+    data = 0b01010001; //Enable FIFO ODR 416 Hz and Continuous
     I2C_writeRegisters(I2C_ADDRESS_HIGH,FIFO_CTRL5,&data,1); 
     
     //data = 0x08 //interrupt FIFO threshold
@@ -38,7 +38,7 @@ void LSM6DSL_configPeriodicReadings (void){
     I2C_writeRegisters(I2C_ADDRESS_HIGH,INT1_CTRL,&data,1); 
 
     data = 0b01100010;
-    /* ODR Acc & PowerMode = 6.66 KHz and Low power only
+    /* ODR Acc & PowerMode = 416 Hz and Low power only
      * Full scale = 2g
      * Acc digital chain = enable
      * Acc analog chain bandwidth = 1.5KHz
